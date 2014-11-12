@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <title>Smart Park Ontinyent</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/introjs.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/osmPubGuide.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css" />	
+	
+	
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script src="js/jquery.datetimepicker.js"></script>
+    <script src="js/intro.js"></script>
+	
+
+</head>
+
+<body>
+    <div data-role="content" style="overflow-y:hidden;">
+        <div id="map"></div>
+    </div>
+    <div id="leftpanel2" data-role="panel" data-dismissible="false" data-position="left" data-position-fixed="true" data-display="overlay" data-theme="b" class="ui-corner-all ui-shadow ui-panel ui-panel-open ui-panel-inner">
+      <a href="#leftpanel2" id="open_sb" class="ui-btn ui-btn-b ui-shadow ui-icon-carat-r ui-btn-icon-notext"></a>
+        <div id = "query" data-role="collapsible">
+            <legend>Introdueix arribada </legend>
+            <!--<h3 id="sidebarHeader" class="ui-bar ui-bar-a ui-corner-all">Start your query</h3>-->
+            <form>
+                <label for="datePickerStart">Introdueix temps d'arribada (min):</label>
+                <input type="datetime-local" data-clear-btn="true" name="datePickerStart" id="datePickerStart" value="" data-theme="a" />
+               
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                    <select id="parking_selector" value="">
+                            <option>Ceam</option>
+                            <option>Plaça de les Sufragistes</option>
+                        </select>
+                  </fieldset>
+                    
+              
+                <fieldset class="ui-grid-a" data-theme="a">
+                    <div class="ui-block-a">
+                        <button type="reset" id="reset" class="ui-btn ui-btn-a ui-corner-all ui-shadow" >Reset</button>
+                    </div>
+                    <div class="ui-block-b">
+                        <button type="button" id="submit" class="ui-btn ui-btn-a ui-corner-all ui-shadow">Pronòstic</button>
+                    </div>
+				</fieldset>
+			</form>
+        </div>
+        <label id="result_text" for="radio-choice-t-6c" style="display:none;">Results:</label>
+        <div data-role="collapsibleset" data-theme="a" data-content-theme="a" id="result" data-collapsed="true">
+        </div>
+    </div>
+    <div data-role="footer" class="nav-glyphish-example ui-shadow" data-theme="b" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar" class="nav-glyphish-example" data-grid="d">
+            <ul>
+                <li class="mytab">
+                    <a href="#leftpanel2" id="search" data-icon="custom" data-role="button" data-inline="true" data-mini="true" class="ui-btn-active">Pàrkings</a>
+                </li>
+                <li class="mytab">
+                    <a href="#" id="ubicacio" data-icon="custom">Ubica'm</a>
+                </li>
+                <li class="mytab">
+                    <a href="#" id="routing" data-icon="custom" >Ruta</a>
+                </li>
+                <li class="mytab">
+                    <a href="#" id="pronostic" data-icon="custom">Pronòstic</a> 
+                </li>
+                <li class="mytab">
+                    <a href="#popupHelp" data-rel="popup" id="info" data-icon="custom">Informació/Ajuda</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="popup" id="popupHelp" data-position-to="window">
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right"></a>
+        <p id="popupHelpHeader" align="middle">Guia de l'Smart Park Ontinyent</p>
+        <p>Benvinguts a l'Smart Park Ontinyent!</p>
+        <p>Per vore l'estat actual dels párkings: <b>pàrkings</b> també pots trobar altres funcions al següents botons:
+        <ul>
+        <li>opció de ruta</li>
+        <li>mostra la teua ubicació i voltants</li>
+        <li>pronòstic d'ocupació</li>
+        </ul>
+        </p>
+        <p>Ací pots trobar una ajuda per a la navegació de la pàgina: <a onclick="$('#popupHelp').popup('close');intro.start();">Inci de la guia</a>
+        </p>
+        <p style="padding-top:3%">L'Smart Pàrk Ontinyent es un projecte de Hall Effect S.L.</p>
+        <a href="http://www.halleffect.net" target="_blank">
+            <img src="halleffectlogo.png" style="width:120px;" />
+        </a>
+    </div>
+    <div id="mapElements">
+		
+        <script src="js/functionality.js"></script>
+        <script src="js/map.js"></script>
+        <script src="js/introFunctionality.js"></script>
+         <script src="js/submit.js"></script>
+        		
+    </div>
+</body>
+
+</html>
